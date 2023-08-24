@@ -8,15 +8,15 @@
                 <ul>
                     <% products.map(prod => { %>
                         <li>
-                            <p><%= prod.productData.title %> (<%= prod.qty %>)</p>
+                            <p><%= prod.title %> (<%= prod.cartItem.quantity %>)</p>
                             <form action="/cart-delete-item" method="POST" >
-                                <input type="hidden" value="<%= p.productData.id  %>" name="productId">
+                                <input type="hidden" value="<%= prod.id  %>" name="productId">
                                 <button class="btn" >Delete</button>
                             </form>
                         </li>
                     <% }) %>
                 </ul>
-            <&} else { %>
+            <%} else { %>
                 <h1>No Products in cart!</h1>
             <%} %>
         </main>
